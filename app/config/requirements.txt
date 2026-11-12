@@ -1,0 +1,36 @@
+# ===== WEB =====
+fastapi
+uvicorn[standard]
+
+# ===== DATABASE =====
+sqlalchemy
+psycopg2-binary
+
+# ===== VALIDATION =====
+pydantic[email]
+
+# ===== CONFIG =====
+python-dotenv
+
+# ===== RATE LIMITING =====
+slowapi
+redis
+
+# ===== TESTING =====
+pytest
+httpx
+
+# ===== AUTH (uncomment when needed) =====
+# python-jose[cryptography]
+# passlib[bcrypt]
+# bcrypt
+
+# ===== EMAIL (uncomment when needed) =====
+# fastapi-mail
+# jinja2
+
+# ===== BACKGROUND TASKS (uncomment when needed) =====
+# celery
+
+# ===== HTTP CLIENT (for third-party APIs) =====
+# httpx
