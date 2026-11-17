@@ -4,7 +4,7 @@ uvicorn[standard]
 
 # ===== DATABASE =====
 sqlalchemy
-psycopg2-binary
+psycopg[binary]
 
 # ===== VALIDATION =====
 pydantic[email]
@@ -20,10 +20,10 @@ redis
 pytest
 httpx
 
-# ===== AUTH (uncomment when needed) =====
-# python-jose[cryptography]
-# passlib[bcrypt]
-# bcrypt
+# ===== AUTH =====
+python-jose[cryptography]
+passlib[bcrypt]
+bcrypt
 
 # ===== EMAIL (uncomment when needed) =====
 # fastapi-mail
