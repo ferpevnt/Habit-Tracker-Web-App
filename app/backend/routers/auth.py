@@ -106,3 +106,20 @@ def RefreshToken(
         max_age=settings.ACCESS_TOKEN_EXPIRE_MINUTES * 60
     )
     return new_response
+
+@router.post("/logout", status_code=status.HTTP_200_OK)
+def LogOut():
+    new_response = Response(status_code=status.HTTP_200_OK)
+    new_response.delete_cookie("access_token")
+    new_response.delete_cookie("refresh_token")
+    return new_response
+
+@router.get("/me", status_code=status.HTTP_200_OK, response_model=schemas.UserOut)
+@limiter.limit("30/minute")
+@limiter.limit("300/hour")
+def UserInfo(
+    request: Request,
+    user: models.User=Depends(get_current_user)):
+    return user
+
+    
