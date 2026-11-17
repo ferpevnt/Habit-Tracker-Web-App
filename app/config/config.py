@@ -61,14 +61,13 @@ class Settings:
     DEBUG: bool = os.getenv("DEBUG", "true").lower() in ("true", "1", "yes")
 
     # ===== AUTH (uncomment when needed) =====
-    # SECRET_KEY: str = _require("SECRET_KEY", example="long_random_string")
-    # ALGORITHM: str = os.getenv("ALGORITHM", "HS256")
-    # ACCESS_TOKEN_EXPIRE_MINUTES: int = _require_int(
-    #     "ACCESS_TOKEN_EXPIRE_MINUTES", example="30"
-    # )
-    # REFRESH_TOKEN_EXPIRE_DAYS: int = _require_int(
-    #     "REFRESH_TOKEN_EXPIRE_DAYS", example="7"
-    # )
+    SECRET_KEY: str = _require("SECRET_KEY", example="long_random_string")
+    ALGORITHM: str = os.getenv("ALGORITHM", "HS256")
+    ACCESS_TOKEN_EXPIRE_MINUTES: int = _require_int(
+         "ACCESS_TOKEN_EXPIRE_MINUTES", example="30")
+    REFRESH_TOKEN_EXPIRE_MINUTES: int = _require_int(
+        "REFRESH_TOKEN_EXPIRE_MINUTES", example="10080"
+    )
 
     # ===== EMAIL (uncomment when needed) =====
     # MAIL_USERNAME: str = _require("MAIL_USERNAME", example="you@gmail.com")
