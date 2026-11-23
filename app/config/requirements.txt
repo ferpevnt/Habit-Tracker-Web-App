@@ -22,7 +22,7 @@ httpx
 
 # ===== AUTH =====
 python-jose[cryptography]
-passlib[bcrypt]
+passlib[argon2]
 bcrypt
 
 # ===== EMAIL (uncomment when needed) =====
