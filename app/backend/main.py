@@ -4,7 +4,7 @@ from database.database import engine, Base
 from config.config import settings
 
 # Import routers
-from routers import auth
+from routers import auth, categories
 
 # Import limiter
 from security.limiter import limiter
@@ -31,3 +31,4 @@ Base.metadata.create_all(engine)
 
 # ===== Routers =====
 app.include_router(auth.router)
+app.include_router(categories.router)
